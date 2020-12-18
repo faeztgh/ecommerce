@@ -92,9 +92,9 @@ function App() {
                             <h1 className={classes.count}>
                                 counter:
                                 <span className={classes.red}>
-                                    {" "}
+                                  
                                     {counter}
-                                </span>{" "}
+                                </span>
                             </h1>
                             <ButtonGroup disableElevation variant="contained">
                                 <Button
