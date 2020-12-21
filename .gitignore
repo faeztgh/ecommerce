@@ -25,4 +25,5 @@ yarn-error.log*
 
 ff.png
 .gitignore
-online-shop.rar
+/online-shop.rar
+debug.log
