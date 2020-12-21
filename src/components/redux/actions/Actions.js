@@ -20,3 +20,17 @@ export const isLoggedAction = () => {
         type: "SIGN_IN",
     };
 };
+
+// ADD or Remove Object from cart
+export const addToCart = (payload) => {
+    return {
+        type: "ADD_TO_CART",
+        payload: payload,
+    };
+};
+export const removeFromCart = (payload) => {
+    return {
+        type: "REMOVE_FROM_CART",
+        payload: payload,
+    };
+};

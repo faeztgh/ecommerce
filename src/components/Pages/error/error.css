@@ -1,0 +1,22 @@
+.error-container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+}
+
+.error-img{
+   
+
+}
+
+@media(max-width:500px){
+    .error-img{
+        width: 100%;
+      
+    }
+}
