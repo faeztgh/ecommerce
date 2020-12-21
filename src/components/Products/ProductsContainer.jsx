@@ -5,6 +5,7 @@ import axios from "axios";
 import "./product.css";
 import { addToCart } from "../redux/actions/Actions";
 import Product from "./Product";
+
 const ProductsContainer = () => {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
@@ -12,7 +13,8 @@ const ProductsContainer = () => {
     const dispatch = useDispatch();
     const fetchData = async () => {
         try {
-            const result = await axios("https://fakestoreapi.com/products");
+            const url = process.env.REACT_APP_API_URL;
+            const result = await axios(url);
             setData(result.data);
             setLoading(false);
             filterData(result.data);
@@ -30,8 +32,6 @@ const ProductsContainer = () => {
         setFilteredData(filtered);
     };
 
-
-    
     return (
         <>
             {loading ? (
@@ -41,7 +41,11 @@ const ProductsContainer = () => {
             ) : (
                 <>
                     <div className="products-container">
-                        <Grid container spacing={4} alignContent="space-between">
+                        <Grid
+                            container
+                            spacing={4}
+                            alignContent="space-between"
+                        >
                             {filteredData.map((item) => {
                                 return (
                                     <Product

@@ -30,7 +30,7 @@ const Products = (props) => {
                         </Button>
                         <Button
                             className="more-info-btn mrl"
-                            onClick={() => dispatch(addToCart(product))}
+                         
                             variant="outlined"
                             color="secondary"
                         >
