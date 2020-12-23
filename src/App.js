@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector, useDispatch } from "react-redux";
-import { HomeContainer, Error } from "./components";
+import { HomeContainer, Error, ShopContainer } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
     const useStyles = makeStyles((theme) => ({}));
@@ -23,7 +23,11 @@ function App() {
                         path="/"
                         render={(props) => <HomeContainer />}
                     />
-
+                    <Route
+                        exact
+                        path="/shop"
+                        render={(props) => <ShopContainer />}
+                    />
                     <Route path="/*" render={(props) => <Error />} />
                 </Switch>
             </Router>

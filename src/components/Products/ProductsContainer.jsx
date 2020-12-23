@@ -5,12 +5,14 @@ import axios from "axios";
 import "./product.css";
 import { addToCart } from "../redux/actions/Actions";
 import Product from "./Product";
+import { ProductInfoDialog } from "../Dialogs";
 
 const ProductsContainer = () => {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
-    const [filteredData, setFilteredData] = useState([]);
+    // Redux
     const dispatch = useDispatch();
+    // Fetching data handling
     const fetchData = async () => {
         try {
             const url = process.env.REACT_APP_API_URL;
@@ -22,16 +24,36 @@ const ProductsContainer = () => {
             console.log(err.message);
         }
     };
-    useEffect(() => {
-        fetchData();
-    }, []);
 
+    // More info dialog implementing
+    const [dialogData, setDialogData] = useState({});
+    const [openProductInfoDialog, setOpenProductInfoDialog] = useState(false);
+    const [
+        scrollForProductInfoDialog,
+        setScrollForProductInfoDialog,
+    ] = useState("paper");
+
+    const handleClickOpenProdcutInfoDialog = (scrollType, dialogData) => () => {
+        setOpenProductInfoDialog(true);
+        setScrollForProductInfoDialog(scrollType);
+        setDialogData(dialogData);
+    };
+
+    const handleCloseProductInfoDialog = () => {
+        setOpenProductInfoDialog(false);
+    };
+
+    // filtering data
+    const [filteredData, setFilteredData] = useState([]);
     const filterData = (data) => {
         let filtered = data.filter((item) => item.category !== "jewelery");
         filtered = filtered.filter((o) => o.category !== "electronics");
         setFilteredData(filtered);
     };
 
+    useEffect(() => {
+        fetchData();
+    }, []);
     return (
         <>
             {loading ? (
@@ -53,6 +75,19 @@ const ProductsContainer = () => {
                                         product={item}
                                         dispatch={dispatch}
                                         addToCart={addToCart}
+                                        openProductinfoDialog={
+                                            openProductInfoDialog
+                                        }
+                                        handleCloseProductInfoDialog={
+                                            handleCloseProductInfoDialog
+                                        }
+                                        scrollProductInfoDialog={
+                                            scrollForProductInfoDialog
+                                        }
+                                        handleClickOpenProdcutInfoDialog={
+                                            handleClickOpenProdcutInfoDialog
+                                        }
+                                        dialogData={dialogData}
                                     />
                                 );
                             })}

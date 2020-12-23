@@ -12,67 +12,121 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useStyles, StyledBadge } from "./style";
+import { MobileMenuDialog } from "../Dialogs";
 
 export default function MenuAppBar(props) {
-    const { auth, cart, handleMenu, anchorEl, handleClose, open } = props;
+    const {
+        auth,
+        cart,
+        handleMenu,
+        anchorEl,
+        handleClose,
+        open,
+        isMobile,
+        openMobileMenu,
+        handleClickOpenMobileMenu,
+        handleCloseMobileMenu,
+    } = props;
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <AppBar position="fixed">
-                <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
-                        Logo
-                    </Typography>
-                    {auth && (
-                        <div>
+        <>
+            {isMobile ? (
+                <div className={classes.root}>
+                    <AppBar position="static">
+                        <Toolbar>
+                            <Typography variant="h5" className={classes.title}>
+                                Logo
+                            </Typography>
                             <IconButton
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                onClick={handleMenu}
+                                edge="start"
+                                className={classes.menuButton}
                                 color="inherit"
+                                aria-label="menu"
+                                onClick={handleClickOpenMobileMenu}
                             >
-                                <StyledBadge badgeContent={cart} color="secondary">
-                                    <ShoppingCartIcon />
-                                </StyledBadge>
+                                <MenuIcon />
                             </IconButton>
-                            <IconButton
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                onClick={handleMenu}
-                                color="inherit"
-                            >
-                                <AccountCircle />
-                            </IconButton>
-                            <Menu
-                                id="menu-appbar"
-                                anchorEl={anchorEl}
-                                anchorOrigin={{
-                                    vertical: "top",
-                                    horizontal: "right",
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: "top",
-                                    horizontal: "right",
-                                }}
-                                open={open}
-                                onClose={handleClose}
-                            >
-                                <MenuItem onClick={handleClose}>
-                                    Profile
-                                </MenuItem>
-                                <MenuItem onClick={handleClose}>
-                                    My account
-                                </MenuItem>
-                            </Menu>
-                        </div>
-                    )}
-                </Toolbar>
-            </AppBar>
-        </div>
+                        </Toolbar>
+                    </AppBar>
+                    <MobileMenuDialog
+                        openMobileMenu={openMobileMenu}
+                        handleClickOpenMobileMenu={handleClickOpenMobileMenu}
+                        handleCloseMobileMenu={handleCloseMobileMenu}
+                    />
+                </div>
+            ) : (
+                <div className={classes.root}>
+                    <AppBar position="fixed">
+                        <Toolbar>
+                            <Typography variant="h6" className={classes.title}>
+                                Logo
+                            </Typography>
+                            <ul className="nav-links">
+                                <li>
+                                    <a href="/">home</a>
+                                </li>
+                                <li>
+                                    <a href="/shop">shop</a>
+                                </li>
+                                <li>
+                                    <a href="/about">about</a>
+                                </li>
+                            </ul>
+                            {auth && (
+                                <div>
+                                    <IconButton
+                                        aria-label="account of current user"
+                                        aria-controls="menu-appbar"
+                                        aria-haspopup="true"
+                                        onClick={handleMenu}
+                                        color="inherit"
+                                    >
+                                        <StyledBadge
+                                            badgeContent={cart}
+                                            color="secondary"
+                                        >
+                                            <ShoppingCartIcon />
+                                        </StyledBadge>
+                                    </IconButton>
+                                    <IconButton
+                                        aria-label="account of current user"
+                                        aria-controls="menu-appbar"
+                                        aria-haspopup="true"
+                                        onClick={handleMenu}
+                                        color="inherit"
+                                    >
+                                        <AccountCircle />
+                                    </IconButton>
+                                    <Menu
+                                        id="menu-appbar"
+                                        anchorEl={anchorEl}
+                                        anchorOrigin={{
+                                            vertical: "top",
+                                            horizontal: "right",
+                                        }}
+                                        keepMounted
+                                        transformOrigin={{
+                                            vertical: "top",
+                                            horizontal: "right",
+                                        }}
+                                        open={open}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>
+                                            Profile
+                                        </MenuItem>
+                                        <MenuItem onClick={handleClose}>
+                                            My account
+                                        </MenuItem>
+                                    </Menu>
+                                </div>
+                            )}
+                        </Toolbar>
+                    </AppBar>
+                </div>
+            )}
+        </>
     );
 }
 

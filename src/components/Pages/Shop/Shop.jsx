@@ -1,12 +1,12 @@
 import React from "react";
-import NavbarContainer from "../../Navbar";
 import ProductsContainer from "../../Products";
-const Home = () => {
+
+const Shop = () => {
     return (
         <>
-            <NavbarContainer />
+            <ProductsContainer />
         </>
     );
 };
 
-export default Home;
+export default Shop;

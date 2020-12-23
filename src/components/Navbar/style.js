@@ -14,7 +14,6 @@ export const useStyles = makeStyles((theme) => ({
     },
 }));
 
-
 export const StyledBadge = withStyles((theme) => ({
     badge: {
         "& > *": {

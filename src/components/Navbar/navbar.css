@@ -1,0 +1,17 @@
+.nav-links {
+    display: flex;
+    list-style: none;
+    flex: 1 1 auto;
+}
+
+.nav-links li {
+    height: 100%;
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    color: white;
+}
