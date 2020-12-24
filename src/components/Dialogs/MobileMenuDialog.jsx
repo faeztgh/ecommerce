@@ -12,6 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
+import AccountCircle from "@material-ui/icons/AccountCircle";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -87,6 +88,18 @@ function MobileMenuDialog(props) {
                     </Toolbar>
                 </AppBar>
                 <ul className={classes.navLinks}>
+                    <li className={classes.navLinksLi}>
+                        <a className={classes.navLink} href="/profile">
+                            <IconButton
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                color="inherit"
+                            >
+                                <AccountCircle fontSize="large" />
+                            </IconButton>
+                        </a>
+                    </li>
                     <li className={classes.navLinksLi}>
                         <a className={classes.navLink} href="/">
                             Home

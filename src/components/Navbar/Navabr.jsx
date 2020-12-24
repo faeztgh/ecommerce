@@ -44,6 +44,21 @@ export default function MenuAppBar(props) {
                                     />
                                 </a>
                             </Typography>
+                            <IconButton
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleMenu}
+                                color="inherit"
+                                href="/cart"
+                            >
+                                <StyledBadge
+                                    badgeContent={cart}
+                                    color="secondary"
+                                >
+                                    <ShoppingCartIcon />
+                                </StyledBadge>
+                            </IconButton>
 
                             <IconButton
                                 edge="start"
@@ -97,6 +112,7 @@ export default function MenuAppBar(props) {
                                         aria-haspopup="true"
                                         onClick={handleMenu}
                                         color="inherit"
+                                        href="/cart"
                                     >
                                         <StyledBadge
                                             badgeContent={cart}
