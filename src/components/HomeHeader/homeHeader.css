@@ -1,8 +1,7 @@
 .home-header-container {
     margin-top: 70px;
-    height: 90vh;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .header-img-wrapper {

@@ -1,0 +1,62 @@
+.WMHero-Container {
+    overflow: hidden;
+}
+
+.hero-img-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.WHHero-label-man {
+    position: absolute;
+    top: 50%;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    transition: 0.8s;
+    cursor: pointer;
+    font-size: 7em;
+    text-decoration: line-through;
+}
+.WHHero-label-woman {
+    position: absolute;
+    top: 50%;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    transition: 0.5s;
+    cursor: pointer;
+    font-size: 7em;
+    text-decoration: line-through;
+}
+
+.WHHero-label-man:hover {
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.WHHero-label-woman:hover {
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+
+@media(max-width:510px){
+    .WHHero-label-man {
+   
+    font-size: 4em;
+}
+.WHHero-label-woman {
+
+    font-size: 4em;
+}
+}
