@@ -29,7 +29,7 @@ const WMHero = () => {
                                 />
                             </picture>
 
-                            <Link className="WHHero-label-man" to="/shop">
+                            <Link className="WHHero-label-man" to="/shop/man">
                                 Man
                             </Link>
                         </div>
@@ -54,7 +54,10 @@ const WMHero = () => {
                                     src="//cdn.shopify.com/s/files/1/0496/8602/0247/files/WOMENS_US_BLOCK_2000x2000_crop_center.jpg?v=1607353601"
                                 />
                             </picture>
-                            <Link to="/shop" className="WHHero-label-woman">
+                            <Link
+                                to="/shop/woman"
+                                className="WHHero-label-woman"
+                            >
                                 woman
                             </Link>
                         </div>

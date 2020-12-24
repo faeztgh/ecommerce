@@ -13,6 +13,7 @@ const useStyles = makeStyles(() => ({
         fontFamily: "var(--montserrat-font)",
         fontSize: "1.2em",
         borderRadius: 0,
+        transition: "0.5s",
 
         "&:hover": {
             background: "#1f1f1f",
@@ -23,7 +24,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 const MyButton = (props) => {
-    const { variant, href, children } = props;
+    const { variant, href, children, endIcon, startIcon } = props;
     // const { onClick, children, icon, type, size, color } = props;
     // const checkBtnType = TYPE.includes(type) ? type : TYPE[0];
     // const checkBtnSize = SIZE.includes(size) ? size : SIZE[0];
@@ -32,7 +33,14 @@ const MyButton = (props) => {
 
     return (
         <>
-            <Button href={href} variant={variant} className={classes.button}>
+            <Button
+                endIcon={endIcon}
+                startIcon={startIcon}
+                href={href}
+                variant={variant}
+                className={classes.button}
+                style={{ background: props.background, color: props.color }}
+            >
                 {children}
             </Button>
         </>

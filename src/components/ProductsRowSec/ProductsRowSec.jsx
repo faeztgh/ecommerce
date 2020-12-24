@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../redux/actions/Actions";
 
 import { Button } from "@material-ui/core";
+import MyButton from "../Button/Button";
 const ProductsRowSec = () => {
     const data = [
         {
@@ -59,15 +60,15 @@ const ProductsRowSec = () => {
                             />
 
                             <div className="scrolling-img-btn">
-                                <Button
+                                <MyButton
                                     variant="contained"
                                     color="default"
                                     size="large"
                                     endIcon={<ShoppingCartIcon />}
-                                    onClick={()=>dispatch(addToCart(item))}
+                                    onClick={() => dispatch(addToCart(item))}
                                 >
                                     Add to cart
-                                </Button>
+                                </MyButton>
                             </div>
                         </div>
                     ))}
