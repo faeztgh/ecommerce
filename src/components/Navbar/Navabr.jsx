@@ -5,9 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import Switch from "@material-ui/core/Switch";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormGroup from "@material-ui/core/FormGroup";
+
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
@@ -33,11 +31,20 @@ export default function MenuAppBar(props) {
         <>
             {isMobile ? (
                 <div className={classes.root}>
-                    <AppBar position="static">
+                    <AppBar position="static" className={classes.appBar}>
                         <Toolbar>
                             <Typography variant="h5" className={classes.title}>
-                                Logo
+                                <a href="/">
+                                    <img
+                                        src={
+                                            process.env.PUBLIC_URL + "/logo.png"
+                                        }
+                                        alt=""
+                                        className="logo"
+                                    />
+                                </a>
                             </Typography>
+
                             <IconButton
                                 edge="start"
                                 className={classes.menuButton}
@@ -57,11 +64,20 @@ export default function MenuAppBar(props) {
                 </div>
             ) : (
                 <div className={classes.root}>
-                    <AppBar position="fixed">
+                    <AppBar position="fixed" className={classes.appBar}>
                         <Toolbar>
                             <Typography variant="h6" className={classes.title}>
-                                Logo
+                                <a href="/">
+                                    <img
+                                        src={
+                                            process.env.PUBLIC_URL + "/logo.png"
+                                        }
+                                        alt=""
+                                        className="logo"
+                                    />
+                                </a>
                             </Typography>
+
                             <ul className="nav-links">
                                 <li>
                                     <a href="/">home</a>

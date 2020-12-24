@@ -16,6 +16,7 @@ import Slide from "@material-ui/core/Slide";
 const useStyles = makeStyles((theme) => ({
     appBar: {
         position: "relative",
+        background: "#1f1f1f ",
     },
     title: {
         marginLeft: theme.spacing(2),
@@ -67,7 +68,13 @@ function MobileMenuDialog(props) {
                 <AppBar className={classes.appBar}>
                     <Toolbar>
                         <Typography variant="h6" className={classes.title}>
-                            LOGO
+                            <a href="/">
+                                <img
+                                    src={process.env.PUBLIC_URL + "/logo.png"}
+                                    alt=""
+                                    className="logo"
+                                />
+                            </a>
                         </Typography>
                         <IconButton
                             edge="start"
