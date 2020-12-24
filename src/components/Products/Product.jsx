@@ -3,7 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Button from "@material-ui/core/Button";
 import { ProductInfoDialog } from "../Dialogs";
-import { ProductPreloader } from "../Preloaders";
 const Products = (props) => {
     const {
         product,

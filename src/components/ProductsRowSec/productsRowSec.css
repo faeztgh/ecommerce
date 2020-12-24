@@ -1,0 +1,31 @@
+.scroll-arrow {
+    font-size: 2em !important;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.scroling-picture {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.scroling-picture img {
+    opacity: 0.9;
+}
+
+.scroling-picture:hover {
+    opacity: 0.89;
+    transition: 1s;
+}
+
+.scrolling-img-btn {
+    position: absolute;
+}
+.scrolling-img-btn > * {
+    font-weight: bolder !important;
+    text-transform: capitalize;
+}
