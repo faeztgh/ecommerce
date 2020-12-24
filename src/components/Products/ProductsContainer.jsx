@@ -6,6 +6,7 @@ import "./product.css";
 import { addToCart } from "../redux/actions/Actions";
 import Product from "./Product";
 import { ProductInfoDialog } from "../Dialogs";
+import { ProductPreloader } from "../Preloaders";
 
 const ProductsContainer = () => {
     const [loading, setLoading] = useState(true);
@@ -57,46 +58,56 @@ const ProductsContainer = () => {
     return (
         <>
             {loading ? (
-                <div>
-                    <h1>loading</h1>
+                <div className="pp-container">
+                    <Grid container spacing={4} alignContent="space-between">
+                        <Preloader />
+                        <Preloader />
+                        <Preloader />
+                        <Preloader />
+                        <Preloader />
+                        <Preloader />
+                        <Preloader />
+                    </Grid>
                 </div>
             ) : (
-                <>
-                    <div className="products-container">
-                        <Grid
-                            container
-                            spacing={4}
-                            alignContent="space-between"
-                        >
-                            {filteredData.map((item) => {
-                                return (
-                                    <Product
-                                        key={item.id}
-                                        product={item}
-                                        dispatch={dispatch}
-                                        addToCart={addToCart}
-                                        openProductinfoDialog={
-                                            openProductInfoDialog
-                                        }
-                                        handleCloseProductInfoDialog={
-                                            handleCloseProductInfoDialog
-                                        }
-                                        scrollProductInfoDialog={
-                                            scrollForProductInfoDialog
-                                        }
-                                        handleClickOpenProdcutInfoDialog={
-                                            handleClickOpenProdcutInfoDialog
-                                        }
-                                        dialogData={dialogData}
-                                    />
-                                );
-                            })}
-                        </Grid>
-                    </div>
-                </>
+                <div className="products-container">
+                    <Grid container spacing={4} alignContent="space-between">
+                        {filteredData.map((item) => {
+                            return (
+                                <Product
+                                    key={item.id}
+                                    product={item}
+                                    dispatch={dispatch}
+                                    addToCart={addToCart}
+                                    openProductinfoDialog={
+                                        openProductInfoDialog
+                                    }
+                                    handleCloseProductInfoDialog={
+                                        handleCloseProductInfoDialog
+                                    }
+                                    scrollProductInfoDialog={
+                                        scrollForProductInfoDialog
+                                    }
+                                    handleClickOpenProdcutInfoDialog={
+                                        handleClickOpenProdcutInfoDialog
+                                    }
+                                    dialogData={dialogData}
+                                />
+                            );
+                        })}
+                    </Grid>
+                </div>
             )}
         </>
     );
 };
 
 export default ProductsContainer;
+
+export const Preloader = () => {
+    return (
+        <Grid item lg={4} xl={4} md={6} sm={6} xs={12} className="pp-item">
+            <ProductPreloader />
+        </Grid>
+    );
+};

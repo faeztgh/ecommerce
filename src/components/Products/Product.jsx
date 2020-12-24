@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Button from "@material-ui/core/Button";
 import { ProductInfoDialog } from "../Dialogs";
+import { ProductPreloader } from "../Preloaders";
 const Products = (props) => {
     const {
         product,
@@ -14,7 +15,7 @@ const Products = (props) => {
         handleClickOpenProdcutInfoDialog,
         dialogData,
     } = props;
-    const { id, title, category, image, description } = product;
+    const { id, title, category, image } = product;
     return (
         <>
             <Grid item lg={4} xl={4} md={6} sm={6} xs={12}>

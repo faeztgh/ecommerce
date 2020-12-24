@@ -31,7 +31,7 @@ export default function MenuAppBar(props) {
         <>
             {isMobile ? (
                 <div className={classes.root}>
-                    <AppBar position="static" className={classes.appBar}>
+                    <AppBar position="fixed" className={classes.appBar}>
                         <Toolbar>
                             <Typography variant="h5" className={classes.title}>
                                 <a href="/">

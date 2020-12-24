@@ -7,6 +7,7 @@ import {
     Error,
     ShopContainer,
     NavbarContainer,
+    About,
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -35,6 +36,8 @@ function App() {
                         path="/shop"
                         render={(props) => <ShopContainer />}
                     />
+
+                    <Route exact path="/about" render={(props) => <About />} />
                     <Route path="/*" render={(props) => <Error />} />
                 </Switch>
             </Router>
