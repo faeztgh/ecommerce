@@ -18,12 +18,18 @@
 
 .footer-email-subscribe {
     width: 100%;
-    height: 20vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
+.saysomthing {
+    background: var(--pigypink-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    text-transform: capitalize;
+}
 #footer-form {
     width: 80%;
     display: flex;
@@ -107,5 +113,9 @@
     }
     .submit-footer-form-btn * {
         font-size: 0.9em !important;
+    }
+
+    .saysomthing {
+        font-size: 1em;
     }
 }

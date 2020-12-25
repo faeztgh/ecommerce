@@ -28,6 +28,7 @@ const Footer = () => {
                             );
                         })}
                     </div>
+                    <h1 className="saysomthing">-let's be in touch-</h1>
                     <div className="footer-email-subscribe">
                         <form method="post" id="footer-form">
                             <label htmlFor="email" id="footer-email-label">
