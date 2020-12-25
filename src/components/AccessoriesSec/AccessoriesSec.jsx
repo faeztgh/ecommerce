@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MyButton from "../Button";
 import "./accessories.css";
 const AccessoriesSec = () => {
@@ -11,14 +12,15 @@ const AccessoriesSec = () => {
                 />
 
                 <div className="accessories-btn">
-                    <MyButton
-                        background="var(--khaki-gradient)"
-                        href="/shop/accessories"
-                        mySize="1.5"
-                        paddingSide="15"
-                    >
-                        go to accessories
-                    </MyButton>
+                    <Link to="/shop/accessories">
+                        <MyButton
+                            background="var(--khaki-gradient)"
+                            size="large"
+                            paddingSide="15"
+                        >
+                            go to accessories
+                        </MyButton>
+                    </Link>
                 </div>
             </div>
         </>

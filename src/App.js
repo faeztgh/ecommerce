@@ -21,7 +21,7 @@ function App() {
                         path="/"
                         render={(props) => <HomeContainer />}
                     />
-                    <Route path="/shop" render={(props) => <ShopContainer />} />
+                    <Route exact path="/shop" render={(props) => <ShopContainer />} />
                     <Route path="/about" render={(props) => <About />} />
                     <Route path="/*" render={(props) => <Error />} />
                 </Switch>
