@@ -12,7 +12,7 @@
     width: 100%;
     display: flex;
     padding: 20px;
-    background: rgb(206, 205, 205);
+    background: rgb(131, 131, 131);
     justify-content: center;
     align-items: center;
 }
@@ -69,9 +69,11 @@
     justify-content: center;
     margin: auto;
     align-items: center;
-    font-size: 0.9em;
+    font-size: 0.7em;
     background: rgb(20, 20, 20);
     height: 5vh;
+    position: absolute;
+    bottom: 0;
 }
 
 .footer-outro a {

@@ -12,7 +12,7 @@ const AccessoriesSec = () => {
 
                 <div className="accessories-btn">
                     <MyButton
-                        background="var( --khaki-gradient)"
+                        background="var(--khaki-gradient)"
                         href="/shop/accessories"
                     >
                         go to accessories

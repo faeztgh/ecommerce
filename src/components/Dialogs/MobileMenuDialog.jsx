@@ -13,6 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import transitions from "@material-ui/core/styles/transitions";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -39,14 +40,24 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
 
         "&:hover": {
-            background: "blue",
+            background: "#DAD4D4",
         },
     },
 
     navLink: {
+        width: "100%",
+        height: "100%",
         textDecoration: "none",
         color: "black",
-        fontSize: "2em",
+        fontSize: "3em",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        transition: "0.5s",
+        "&:hover": {
+            fontSize: "3.2em",
+            transition: "0.3s",
+        },
     },
 }));
 
@@ -69,7 +80,7 @@ function MobileMenuDialog(props) {
                 <AppBar className={classes.appBar}>
                     <Toolbar>
                         <Typography variant="h6" className={classes.title}>
-                            <a href="/">
+                            <a href="/" >
                                 <img
                                     src={process.env.PUBLIC_URL + "/logo.png"}
                                     alt=""
@@ -97,7 +108,7 @@ function MobileMenuDialog(props) {
                                 color="inherit"
                             >
                                 <AccountCircle fontSize="large" />
-                            </IconButton>
+                            </IconButton>Profile
                         </a>
                     </li>
                     <li className={classes.navLinksLi}>
