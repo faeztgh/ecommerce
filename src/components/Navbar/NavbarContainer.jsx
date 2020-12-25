@@ -21,8 +21,8 @@ const NavbarContainer = () => {
         setAnchorEl(null);
     };
 
-    const tmp = useSelector((state) => state.cartReducer);
-
+    // redux
+    const cartArray = useSelector((state) => state.cartReducer);
     const handleIsMobile = () => {
         if (window.innerWidth <= 600) {
             setIsMobile(true);
@@ -49,12 +49,12 @@ const NavbarContainer = () => {
             window.removeEventListener("resize", handleIsMobile);
             window.removeEventListener("load", handleIsMobile);
         };
-    }, [tmp, isMobile]);
+    }, [cartArray, isMobile]);
 
     return (
         <>
             <Navbar
-                cart={tmp.length}
+                cart={cartArray.length}
                 auth={auth}
                 handleChange={handleChange}
                 handleMenu={handleMenu}

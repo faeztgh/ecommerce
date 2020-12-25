@@ -14,6 +14,8 @@ const AccessoriesSec = () => {
                     <MyButton
                         background="var(--khaki-gradient)"
                         href="/shop/accessories"
+                        mySize="1.5"
+                        paddingSide="15"
                     >
                         go to accessories
                     </MyButton>

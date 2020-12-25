@@ -5,7 +5,7 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "./productsRowSec.css";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../redux/actions/Actions";
+import { addToCartAction } from "../redux/actions/Actions";
 
 import { Button } from "@material-ui/core";
 import MyButton from "../Button/Button";
@@ -65,7 +65,7 @@ const ProductsRowSec = () => {
                                     color="default"
                                     size="large"
                                     endIcon={<ShoppingCartIcon />}
-                                    onClick={() => dispatch(addToCart(item))}
+                                    onClick={() => dispatch(addToCartAction(item))}
                                 >
                                     Add to cart
                                 </MyButton>

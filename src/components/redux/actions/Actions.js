@@ -22,15 +22,22 @@ export const isLoggedAction = () => {
 };
 
 // ADD or Remove Object from cart
-export const addToCart = (payload) => {
+export const addToCartAction = (payload) => {
     return {
         type: "ADD_TO_CART",
         payload: payload,
     };
 };
-export const removeFromCart = (payload) => {
+export const removeFromCartAction = (payload) => {
     return {
         type: "REMOVE_FROM_CART",
         payload: payload,
+    };
+};
+
+// is mobile action
+export const isMobileAction = () => {
+    return {
+        type: "IS_MOBILE",
     };
 };

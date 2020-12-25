@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import "./product.css";
-import { addToCart } from "../redux/actions/Actions";
+import { addToCartAction } from "../redux/actions/Actions";
 import Product from "./Product";
 import { ProductInfoDialog } from "../Dialogs";
 import { ProductPreloader } from "../Preloaders";
@@ -80,7 +80,7 @@ const ProductsContainer = () => {
                                     key={item.id}
                                     product={item}
                                     dispatch={dispatch}
-                                    addToCart={addToCart}
+                                    addToCart={addToCartAction}
                                     openProductinfoDialog={
                                         openProductInfoDialog
                                     }

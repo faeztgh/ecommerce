@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         background: "#1f1f1f ",
     },
     title: {
-        marginLeft: theme.spacing(2),
+        marginLeft: theme.spacing(0),
         flex: 1,
     },
     navLinks: {
@@ -94,7 +94,10 @@ function MobileMenuDialog(props) {
                     </Toolbar>
                 </AppBar>
                 <ul className={classes.navLinks}>
-                    <li className={classes.navLinksLi}>
+                    <li
+                        className={classes.navLinksLi}
+                        onClick={handleCloseMobileMenu}
+                    >
                         <Link className={classes.navLink} to="/profile">
                             <IconButton
                                 aria-label="account of current user"
@@ -107,17 +110,26 @@ function MobileMenuDialog(props) {
                             Profile
                         </Link>
                     </li>
-                    <li className={classes.navLinksLi}>
+                    <li
+                        className={classes.navLinksLi}
+                        onClick={handleCloseMobileMenu}
+                    >
                         <Link className={classes.navLink} to="/">
                             Home
                         </Link>
                     </li>
-                    <li className={classes.navLinksLi}>
+                    <li
+                        className={classes.navLinksLi}
+                        onClick={handleCloseMobileMenu}
+                    >
                         <Link className={classes.navLink} to="/shop">
                             Shop
                         </Link>
                     </li>
-                    <li className={classes.navLinksLi}>
+                    <li
+                        className={classes.navLinksLi}
+                        onClick={handleCloseMobileMenu}
+                    >
                         <Link className={classes.navLink} to="/about">
                             About
                         </Link>

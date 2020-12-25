@@ -13,6 +13,7 @@ const useStyles = makeStyles(() => ({
         fontFamily: "var(--montserrat-font)",
         fontSize: "1.2em",
         borderRadius: 0,
+        boxShadow: "0 5px 15px black",
         transition: "0.5s",
 
         "&:hover": {
@@ -39,7 +40,9 @@ const MyButton = (props) => {
                 style={{
                     background: props.background,
                     color: props.color,
-                    fontSize: props.size,
+                    fontSize: `${props.mySize}em`,
+                    paddingLeft: `${props.paddingSide}px`,
+                    paddingRight: `${props.paddingSide}px`,
                 }}
                 size={size}
             >

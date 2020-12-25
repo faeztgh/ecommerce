@@ -27,7 +27,6 @@ export default function MenuAppBar(props) {
         handleCloseMobileMenu,
     } = props;
     const classes = useStyles();
-
     return (
         <>
             {isMobile ? (

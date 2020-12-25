@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme) => ({
         background: "#1f1f1f ",
     },
     menuButton: {
-        marginRight: theme.spacing(2),
+        marginRight: theme.spacing(0),
     },
     title: {
         flexGrow: 1,
