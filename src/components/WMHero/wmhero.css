@@ -1,5 +1,5 @@
 .WMHero-Container {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .hero-img-wrapper {
