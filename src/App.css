@@ -16,6 +16,9 @@
         #fadf87,
         #fcda7dda
     );
+
+    --midnightCity-gradient: linear-gradient(to bottom, #232526, #414345);
+    --deepSpace-gradient: linear-gradient(to bottom, #000000, #434343);
 }
 
 a {

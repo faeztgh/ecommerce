@@ -49,7 +49,18 @@ const Footer = () => {
                             </div>
                         </form>
                     </div>
-
+                    <div className="footer-contact-info">
+                        <span>
+                            <h5>Phone : </h5>
+                            <p>0123456789</p>
+                        </span>
+                        <span>
+                            <h5>Address : </h5> <p>London - 22 Bake Street</p>
+                        </span>
+                        <span>
+                            <h5>Email : </h5> <p>contact@f&co.com</p>
+                        </span>
+                    </div>
                     <div className="footer-outro">
                         <span>&lt; &gt;</span>
                         <p>
