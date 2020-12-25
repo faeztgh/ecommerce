@@ -67,6 +67,8 @@ const ProductsContainer = () => {
                         <Preloader />
                         <Preloader />
                         <Preloader />
+                        <Preloader />
+                        <Preloader />
                     </Grid>
                 </div>
             ) : (

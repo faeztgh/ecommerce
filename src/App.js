@@ -8,12 +8,12 @@ import {
     NavbarContainer,
     About,
 } from "./components";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
     return (
         <>
-            <Router >
+            <Router basename={process.env.PUBLIC_URL}>
                 <NavbarContainer />
                 <Switch>
                     <Route
@@ -22,7 +22,6 @@ function App() {
                         render={(props) => <HomeContainer />}
                     />
                     <Route path="/shop" render={(props) => <ShopContainer />} />
-
                     <Route path="/about" render={(props) => <About />} />
                     <Route path="/*" render={(props) => <Error />} />
                 </Switch>

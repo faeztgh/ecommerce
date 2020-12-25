@@ -11,6 +11,7 @@ import Menu from "@material-ui/core/Menu";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useStyles, StyledBadge } from "./style";
 import { MobileMenuDialog } from "../Dialogs";
+import { Link } from "react-router-dom";
 
 export default function MenuAppBar(props) {
     const {
@@ -34,7 +35,7 @@ export default function MenuAppBar(props) {
                     <AppBar position="fixed" className={classes.appBar}>
                         <Toolbar>
                             <Typography variant="h5" className={classes.title}>
-                                <a href="/">
+                                <Link to="/">
                                     <img
                                         src={
                                             process.env.PUBLIC_URL + "/logo.png"
@@ -42,7 +43,7 @@ export default function MenuAppBar(props) {
                                         alt=""
                                         className="logo"
                                     />
-                                </a>
+                                </Link>
                             </Typography>
                             <IconButton
                                 aria-label="account of current user"
@@ -82,7 +83,7 @@ export default function MenuAppBar(props) {
                     <AppBar position="fixed" className={classes.appBar}>
                         <Toolbar>
                             <Typography variant="h6" className={classes.title}>
-                                <a href="/">
+                                <Link to="/">
                                     <img
                                         src={
                                             process.env.PUBLIC_URL + "/logo.png"
@@ -90,18 +91,18 @@ export default function MenuAppBar(props) {
                                         alt=""
                                         className="logo"
                                     />
-                                </a>
+                                </Link>
                             </Typography>
 
                             <ul className="nav-links">
                                 <li>
-                                    <a href="/">home</a>
+                                    <Link to="/">home</Link>
                                 </li>
                                 <li>
-                                    <a href="/shop">shop</a>
+                                    <Link to="/shop">shop</Link>
                                 </li>
                                 <li>
-                                    <a href="/about">about</a>
+                                    <Link to="/about">about</Link>
                                 </li>
                             </ul>
                             {auth && (

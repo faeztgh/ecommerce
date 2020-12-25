@@ -1,11 +1,6 @@
-import React, { useState, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -13,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import transitions from "@material-ui/core/styles/transitions";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -80,13 +75,13 @@ function MobileMenuDialog(props) {
                 <AppBar className={classes.appBar}>
                     <Toolbar>
                         <Typography variant="h6" className={classes.title}>
-                            <a href="/" >
+                            <Link to="/">
                                 <img
                                     src={process.env.PUBLIC_URL + "/logo.png"}
                                     alt=""
                                     className="logo"
                                 />
-                            </a>
+                            </Link>
                         </Typography>
                         <IconButton
                             edge="start"
@@ -100,7 +95,7 @@ function MobileMenuDialog(props) {
                 </AppBar>
                 <ul className={classes.navLinks}>
                     <li className={classes.navLinksLi}>
-                        <a className={classes.navLink} href="/profile">
+                        <Link className={classes.navLink} to="/profile">
                             <IconButton
                                 aria-label="account of current user"
                                 aria-controls="menu-appbar"
@@ -108,23 +103,24 @@ function MobileMenuDialog(props) {
                                 color="inherit"
                             >
                                 <AccountCircle fontSize="large" />
-                            </IconButton>Profile
-                        </a>
+                            </IconButton>
+                            Profile
+                        </Link>
                     </li>
                     <li className={classes.navLinksLi}>
-                        <a className={classes.navLink} href="/">
+                        <Link className={classes.navLink} to="/">
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li className={classes.navLinksLi}>
-                        <a className={classes.navLink} href="/shop">
+                        <Link className={classes.navLink} to="/shop">
                             Shop
-                        </a>
+                        </Link>
                     </li>
                     <li className={classes.navLinksLi}>
-                        <a className={classes.navLink} href="/about">
+                        <Link className={classes.navLink} to="/about">
                             About
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </Dialog>
