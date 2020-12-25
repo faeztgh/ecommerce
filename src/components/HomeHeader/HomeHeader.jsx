@@ -15,20 +15,19 @@ const HomeHeader = () => {
                                     <source
                                         media="(max-width: 1080px)"
                                         data-srcset="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER_1100x.jpg?v=1607353165"
-                                        srcset="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER_1100x.jpg?v=1607353165"
+                                        srcSet="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER_1100x.jpg?v=1607353165"
                                     />
                                     <source
                                         media="(max-width: 1400px)"
                                         data-srcset="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER_2000x.jpg?v=1607353165"
-                                        srcset="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER_2000x.jpg?v=1607353165"
+                                        srcSet="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER_2000x.jpg?v=1607353165"
                                     />
                                     <source
                                         media="(max-width: 1600px)"
                                         data-srcset="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER_2500x.jpg?v=1607353165"
-                                        srcset="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER_2500x.jpg?v=1607353165"
+                                        srcSet="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER_2500x.jpg?v=1607353165"
                                     />
                                     <img
-                                        class="align-center lazyloaded"
                                         data-src="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER.jpg?v=1607353165"
                                         alt=""
                                         src="//cdn.shopify.com/s/files/1/0496/8602/0247/files/US_HOME_PAGE_BANNER.jpg?v=1607353165"

@@ -45,13 +45,12 @@ const NavbarContainer = () => {
     useEffect(() => {
         window.addEventListener("load", handleIsMobile);
         window.addEventListener("resize", handleIsMobile);
-        console.log(isMobile);
         return () => {
             window.removeEventListener("resize", handleIsMobile);
             window.removeEventListener("load", handleIsMobile);
         };
     }, [tmp, isMobile]);
-    
+
     return (
         <>
             <Navbar

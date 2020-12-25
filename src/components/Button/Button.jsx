@@ -24,11 +24,8 @@ const useStyles = makeStyles(() => ({
     },
 }));
 const MyButton = (props) => {
-    const { variant, href, children, endIcon, startIcon } = props;
-    // const { onClick, children, icon, type, size, color } = props;
-    // const checkBtnType = TYPE.includes(type) ? type : TYPE[0];
-    // const checkBtnSize = SIZE.includes(size) ? size : SIZE[0];
-    // const checkBtnColor = COLOR.includes(color) ? color : COLOR[0];
+    const { variant, href, children, endIcon, startIcon, size } = props;
+
     const classes = useStyles();
 
     return (
@@ -39,7 +36,12 @@ const MyButton = (props) => {
                 href={href}
                 variant={variant}
                 className={classes.button}
-                style={{ background: props.background, color: props.color }}
+                style={{
+                    background: props.background,
+                    color: props.color,
+                    fontSize: props.size,
+                }}
+                size={size}
             >
                 {children}
             </Button>
