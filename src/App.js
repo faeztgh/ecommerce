@@ -7,6 +7,7 @@ import {
     ShopContainer,
     NavbarContainer,
     About,
+    Footer,
 } from "./components";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -21,10 +22,15 @@ function App() {
                         path="/"
                         render={(props) => <HomeContainer />}
                     />
-                    <Route exact path="/shop" render={(props) => <ShopContainer />} />
+                    <Route
+                        exact
+                        path="/shop"
+                        render={(props) => <ShopContainer />}
+                    />
                     <Route path="/about" render={(props) => <About />} />
                     <Route path="/*" render={(props) => <Error />} />
                 </Switch>
+                <Footer />
             </Router>
         </>
     );

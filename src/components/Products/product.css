@@ -1,7 +1,7 @@
 .products-container {
     display: flex;
     margin: auto;
-    margin-top: 150px;
+    margin: 150px 0;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -45,12 +45,20 @@
 .product-category {
     text-transform: capitalize;
     color: rgb(1, 52, 100);
-    padding: 15px 0;
+    padding: 10px 0;
 }
 .product-category span {
     color: rgb(100, 100, 100);
 }
 
+.product-price {
+    padding-bottom: 10px;
+    color: rgb(18, 4, 136);
+}
+
+.product-price span {
+    color: rgb(100, 100, 100);
+}
 .mrl {
     margin: 0 10px !important;
 }
@@ -61,12 +69,11 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 15vh;
-    overflow: hidden ;
+    overflow: hidden;
 }
 
 .pp-item {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-
 }

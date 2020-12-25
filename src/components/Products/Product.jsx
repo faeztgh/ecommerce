@@ -14,7 +14,7 @@ const Products = (props) => {
         handleClickOpenProdcutInfoDialog,
         dialogData,
     } = props;
-    const { id, title, category, image } = product;
+    const { id, title, category, image, price } = product;
     return (
         <>
             <Grid item lg={4} xl={4} md={6} sm={6} xs={12}>
@@ -23,10 +23,13 @@ const Products = (props) => {
                     <img key={id} src={image} alt="" className="product-img" />
 
                     <div className="card-footer">
-                        <h3 className="product-category">
+                        <h4 className="product-category">
                             <span>Category : </span>
                             {category}
-                        </h3>
+                        </h4>
+                        <h4 className="product-price">
+                            <span>Price : </span> ${price}
+                        </h4>
 
                         <Button
                             className="add-to-cart-btn"

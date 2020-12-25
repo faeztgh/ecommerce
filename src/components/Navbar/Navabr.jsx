@@ -49,14 +49,15 @@ export default function MenuAppBar(props) {
                                 aria-haspopup="true"
                                 onClick={handleMenu}
                                 color="inherit"
-                                href="/cart"
                             >
-                                <StyledBadge
-                                    badgeContent={cart}
-                                    color="secondary"
-                                >
-                                    <LocalMallIcon />
-                                </StyledBadge>
+                                <Link to="/cart">
+                                    <StyledBadge
+                                        badgeContent={cart}
+                                        color="secondary"
+                                    >
+                                        <LocalMallIcon />
+                                    </StyledBadge>
+                                </Link>
                             </IconButton>
 
                             <IconButton
@@ -112,12 +113,14 @@ export default function MenuAppBar(props) {
                                         onClick={handleMenu}
                                         color="inherit"
                                     >
-                                        <StyledBadge
-                                            badgeContent={cart}
-                                            color="secondary"
-                                        >
-                                            <LocalMallIcon  />
-                                        </StyledBadge>
+                                        <Link to="/cart">
+                                            <StyledBadge
+                                                badgeContent={cart}
+                                                color="secondary"
+                                            >
+                                                <LocalMallIcon />
+                                            </StyledBadge>
+                                        </Link>
                                     </IconButton>
                                     <IconButton
                                         aria-label="account of current user"
