@@ -112,7 +112,6 @@ export default function MenuAppBar(props) {
                                         aria-haspopup="true"
                                         onClick={handleMenu}
                                         color="inherit"
-                                        href="/cart"
                                     >
                                         <StyledBadge
                                             badgeContent={cart}
@@ -130,28 +129,6 @@ export default function MenuAppBar(props) {
                                     >
                                         <AccountCircle />
                                     </IconButton>
-                                    <Menu
-                                        id="menu-appbar"
-                                        anchorEl={anchorEl}
-                                        anchorOrigin={{
-                                            vertical: "top",
-                                            horizontal: "right",
-                                        }}
-                                        keepMounted
-                                        transformOrigin={{
-                                            vertical: "top",
-                                            horizontal: "right",
-                                        }}
-                                        open={open}
-                                        onClose={handleClose}
-                                    >
-                                        <MenuItem onClick={handleClose}>
-                                            Profile
-                                        </MenuItem>
-                                        <MenuItem onClick={handleClose}>
-                                            My account
-                                        </MenuItem>
-                                    </Menu>
                                 </div>
                             )}
                         </Toolbar>
@@ -161,16 +138,3 @@ export default function MenuAppBar(props) {
         </>
     );
 }
-
-export const MobileMenu = (classes) => {
-    return (
-        <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-        >
-            <MenuIcon />
-        </IconButton>
-    );
-};

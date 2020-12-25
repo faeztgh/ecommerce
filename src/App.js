@@ -13,7 +13,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
     return (
         <>
-            <Router basename={process.env.PUBLIC_URL}>
+            <Router>
                 <NavbarContainer />
                 <Switch>
                     <Route
