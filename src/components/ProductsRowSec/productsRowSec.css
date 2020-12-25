@@ -29,3 +29,7 @@
     font-weight: bolder !important;
     text-transform: capitalize;
 }
+
+.menu-wrapper--inner{
+    transform: translate3d(-877px, 0px, 0px ) ;
+}

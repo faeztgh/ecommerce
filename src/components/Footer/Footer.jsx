@@ -42,7 +42,7 @@ const Footer = () => {
                                 placeholder="subscribe for latest collections"
                             />
                             <div className="submit-footer-form-btn">
-                                <MyButton size="small" color="red">
+                                <MyButton size="medium" color="red">
                                     subscribe
                                 </MyButton>
                             </div>
@@ -79,16 +79,16 @@ export const Data = [
         icon: <FacebookIcon fontSize="large" color="primary" />,
     },
     {
-        id: 1,
-        name: "instagram",
-        src: "https://www.instagram.com",
-        icon: <InstagramIcon fontSize="large" color="action" />,
-    },
-    {
         id: 2,
         name: "youtube",
         src: "https://www.youtube.com",
         icon: <YouTubeIcon fontSize="large" color="secondary" />,
+    },
+    {
+        id: 1,
+        name: "instagram",
+        src: "https://www.instagram.com",
+        icon: <InstagramIcon fontSize="large" color="inherit" />,
     },
     {
         id: 3,

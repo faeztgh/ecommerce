@@ -13,12 +13,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
     return (
         <>
-            <Router>
+            <Router >
                 <NavbarContainer />
                 <Switch>
                     <Route
                         exact
-                        path={process.env.PUBLIC_URL + "/"}
+                        path="/"
                         render={(props) => <HomeContainer />}
                     />
                     <Route path="/shop" render={(props) => <ShopContainer />} />
