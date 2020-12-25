@@ -43,7 +43,7 @@ const Footer = () => {
                                 placeholder="subscribe for latest collections"
                             />
                             <div className="submit-footer-form-btn">
-                                <MyButton size="small" color="red">
+                                <MyButton mySize="0.8" color="red">
                                     subscribe
                                 </MyButton>
                             </div>

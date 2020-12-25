@@ -27,7 +27,7 @@
     background: var(--pigypink-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2em;
+    font-size: 1em;
     text-transform: capitalize;
 }
 #footer-form {
@@ -36,12 +36,15 @@
     justify-content: center;
     margin: auto;
     align-items: center;
+    /* flex-wrap: wrap; */
+    margin: 10px 0;
 }
 
 #footer-email-label {
     font-size: 2em;
     color: white;
     margin-right: 10px;
+    padding: 5px;
 }
 
 #footer-email-input {
@@ -51,8 +54,9 @@
     outline: none;
     border: none;
     padding: 5px;
-    height: 4vh;
+    height: 3vh;
     text-transform: capitalize;
+    margin: 5px;
 }
 
 .submit-footer-form-btn {
@@ -130,7 +134,9 @@
     #footer-form * {
         font-size: 1em;
     }
-
+    #foote-email-label {
+        font-size: 1em;
+    }
     #footer-email-input {
         font-size: 0.5em;
         width: 90%;
