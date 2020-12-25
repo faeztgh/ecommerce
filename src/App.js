@@ -18,16 +18,12 @@ function App() {
                 <Switch>
                     <Route
                         exact
-                        path="/"
+                        path={process.env.PUBLIC_URL + "/"}
                         render={(props) => <HomeContainer />}
                     />
-                    <Route
-                        exact
-                        path="/shop"
-                        render={(props) => <ShopContainer />}
-                    />
+                    <Route path="/shop" render={(props) => <ShopContainer />} />
 
-                    <Route exact path="/about" render={(props) => <About />} />
+                    <Route path="/about" render={(props) => <About />} />
                     <Route path="/*" render={(props) => <Error />} />
                 </Switch>
             </Router>
