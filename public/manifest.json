@@ -1,11 +1,9 @@
 {
-  "short_name": "Faez",
-  "name": "ecommerce",
-  "icons": [
-    
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+    "short_name": "Ecommerce",
+    "name": "Online Shop",
+    "icons": [],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#000000"
 }
