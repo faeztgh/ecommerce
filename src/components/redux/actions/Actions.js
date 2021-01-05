@@ -15,9 +15,10 @@ export const resetCounter = () => {
     };
 };
 
-export const isLoggedAction = () => {
+export const isLoggedAction = (userObj) => {
     return {
         type: "SIGN_IN",
+        payload: userObj,
     };
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import MyButton from "../Button";
+import MyButton from "../../../../Buttons/Button";
 import "./accessories.css";
 const AccessoriesSec = () => {
     return (

@@ -7,7 +7,11 @@ import {
     ShopContainer,
     NavbarContainer,
     About,
-    Footer,
+    UserDashboardContainer,
+    Login,
+    Signup,
+    PrivateRoute,
+    ForgotPassword,
 } from "./components";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -17,20 +21,23 @@ function App() {
             <Router>
                 <NavbarContainer />
                 <Switch>
+                    <Route exact path="/" render={() => <HomeContainer />} />
+                    <Route path="/shop" render={() => <ShopContainer />} />
+                    <Route path="/about" render={() => <About />} />
+                    <Route path="/login" render={() => <Login />} />
+                    <Route path="/signup" render={() => <Signup />} />
                     <Route
-                        exact
-                        path="/"
-                        render={(props) => <HomeContainer />}
+                        path="/forgot-password"
+                        render={() => <ForgotPassword />}
                     />
-                    <Route
+
+                    <PrivateRoute
                         exact
-                        path="/shop"
-                        render={(props) => <ShopContainer />}
+                        path="/user-dashboard"
+                        render={() => <UserDashboardContainer />}
                     />
-                    <Route path="/about" render={(props) => <About />} />
-                    <Route path="/*" render={(props) => <Error />} />
+                    <Route path="/*" render={() => <Error />} />
                 </Switch>
-                <Footer />
             </Router>
         </>
     );

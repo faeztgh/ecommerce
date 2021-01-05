@@ -1,9 +1,12 @@
 import React from "react";
-import AccessoriesSec from "../../AccessoriesSec";
-import HomeHeader from "../../HomeHeader";
-import ProductsRowSec from "../../ProductsRowSec";
-import WMHero from "../../WMHero";
+import {
+    AccessoriesSec,
+    HomeHeader,
+    WMHero,
+    ProductsRowSec,
+} from "./components";
 
+import { Footer } from "../../../components";
 import "./home.css";
 
 const Home = () => {
@@ -13,6 +16,7 @@ const Home = () => {
             <WMHero />
             <ProductsRowSec />
             <AccessoriesSec />
+            <Footer />
         </>
     );
 };

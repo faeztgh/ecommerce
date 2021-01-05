@@ -14,12 +14,17 @@
 
 .home-header-img {
     transition: 0.5s;
+    width: 100%;
 }
+
 .home-header-img:hover {
     opacity: 0.9;
     transition: 0.5s;
 }
 
+.home-header-img img {
+    width: 100%;
+}
 .home-header-content-wrapper {
     position: absolute;
     color: white;
@@ -45,6 +50,14 @@
 
     .home-header-content-wrapper {
         font-size: 1.3em;
+    }
+}
+@media (max-width: 1000px) {
+    .home-header-img img {
+        width: unset;
+    }
+    .home-header-img {
+        width: unset;
     }
 }
 @media (max-width: 440px) {

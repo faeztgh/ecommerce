@@ -6,11 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import allReducers from "./components/redux/reducer/";
-
+import { applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 const store = createStore(
     allReducers,
-    // Comment next line for disable devtools
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    composeWithDevTools(applyMiddleware(thunk))
 );
 
 ReactDOM.render(

@@ -7,7 +7,7 @@ import PinterestIcon from "@material-ui/icons/Pinterest";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import CodeIcon from "@material-ui/icons/Code";
-import MyButton from "../Button";
+import MyButton from "../Buttons/Button";
 const Footer = () => {
     return (
         <>

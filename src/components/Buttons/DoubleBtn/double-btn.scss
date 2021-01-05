@@ -1,0 +1,45 @@
+@import "../../../sass/variables";
+
+.db-link {
+    position: relative;
+    display: inline-block;
+    min-width: 160px;
+    height: 50px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    font-weight: bold;
+
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: $boneColor;
+        background: $mineshaftColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 18px;
+        cursor: pointer;
+
+        &:nth-child(2) {
+            color: #000000;
+            background: $boneColor;
+            overflow: hidden;
+            z-index: 2;
+            transition: 0.5s;
+            clip-path: polygon(0% 0%, 40% 0, 55% 50%, 40% 100%, 0% 100%);
+        }
+
+        &:nth-child(2):hover {
+            clip-path: polygon(0% 0%, 100% 0, 100% 49%, 100% 100%, 0% 100%);
+        }
+
+        &:nth-child(1):hover ~ span:nth-child(2) {
+            clip-path: polygon(0% 0%, 0 0, 0 50%, 0 100%, 0% 100%);
+        }
+    }
+}
+

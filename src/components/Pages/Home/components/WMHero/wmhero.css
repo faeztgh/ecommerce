@@ -10,6 +10,13 @@
     text-transform: uppercase;
 }
 
+.home-header-pic{
+    width: 100%;
+}
+.home-header-pic img{
+    width: 100%;
+}
+
 .WHHero-label-man {
     position: absolute;
     top: 50%;

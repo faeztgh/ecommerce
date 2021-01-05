@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Button from "../Button";
+import Button from "../../../../Buttons/Button";
 import "./wmhero.css";
 import { Link } from "react-router-dom";
 const WMHero = () => {
@@ -10,7 +10,7 @@ const WMHero = () => {
                 <Grid container>
                     <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
                         <div className="hero-img-wrapper">
-                            <picture>
+                            <picture className="home-header-pic">
                                 <source
                                     media="(max-width: 600px)"
                                     data-srcset="//cdn.shopify.com/s/files/1/0496/8602/0247/files/MENS_HOME_BLOCK_US_600x600_crop_center.jpg?v=1607353471"
@@ -35,7 +35,7 @@ const WMHero = () => {
                     </Grid>
                     <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
                         <div className="hero-img-wrapper">
-                            <picture>
+                            <picture className="home-header-pic">
                                 <source
                                     media="(max-width: 600px)"
                                     data-srcset="//cdn.shopify.com/s/files/1/0496/8602/0247/files/WOMENS_US_BLOCK_600x600_crop_center.jpg?v=1607353601"

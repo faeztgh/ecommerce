@@ -5,10 +5,10 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "./productsRowSec.css";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCartAction } from "../redux/actions/Actions";
+import { addToCartAction } from "../../../../redux/actions/Actions";
 
 import { Button } from "@material-ui/core";
-import MyButton from "../Button/Button";
+import MyButton from "../../../../Buttons/Button";
 const ProductsRowSec = () => {
     const data = [
         {
