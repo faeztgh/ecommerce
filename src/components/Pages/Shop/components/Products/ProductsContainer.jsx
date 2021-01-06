@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
-import "./product.css";
+import "./product.scss";
 import { addToCartAction } from "../../../../redux/actions";
 import Product from "./Product";
 import { ProductPreloader } from "../../../../Preloaders";
@@ -33,12 +33,15 @@ const ProductsContainer = () => {
         setScrollForProductInfoDialog,
     ] = useState("paper");
 
+    // handle more info of each product
     const handleClickOpenProdcutInfoDialog = (scrollType, dialogData) => () => {
         setOpenProductInfoDialog(true);
         setScrollForProductInfoDialog(scrollType);
         setDialogData(dialogData);
     };
-
+    
+    
+    // handle close more info of each product
     const handleCloseProductInfoDialog = () => {
         setOpenProductInfoDialog(false);
     };

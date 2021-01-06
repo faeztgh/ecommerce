@@ -1,0 +1,79 @@
+
+@import '../../../../../sass/variables';
+
+.products-container {
+    margin: auto;
+          @include flex-center-row;
+
+    overflow: hidden;
+    width: 100%;
+    .product-card {
+       @include flex-center-column;
+
+        .product-img {
+            width: 250px;
+            height: 350px;
+            transition: 1s ease;
+        }
+
+        &:hover .product-img {
+            width: 270px;
+            transform: translateY(-10px);
+        }
+
+        &:hover .product-title {
+            font-size: 1.05em;
+            transition: 0.5s;
+        }
+
+        .product-title {
+            width: 250px;
+            text-align: center;
+            padding: 15px 15px;
+            border-radius: 5px;
+            background: rgb(247, 247, 247);
+            margin-bottom: 15px;
+            font-size: 1em;
+            transition: 0.5s;
+        }
+
+        .card-footer {
+            .product-category {
+                text-transform: capitalize;
+                color: rgb(1, 52, 100);
+                padding: 10px 0;
+
+                span {
+                    color: rgb(100, 100, 100);
+                }
+            }
+
+            .product-price {
+                padding-bottom: 10px;
+                color: rgb(18, 4, 136);
+
+                span {
+                    color: rgb(100, 100, 100);
+                }
+            }
+
+            .mrl {
+                margin: 0 10px !important;
+            }
+        }
+    }
+}
+
+/*  product preloader */
+.pp-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15vh;
+    overflow: hidden;
+    .pp-item {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}

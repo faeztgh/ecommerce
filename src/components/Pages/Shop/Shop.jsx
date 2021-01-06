@@ -1,10 +1,12 @@
 import React from "react";
 import ProductsContainer from "./components/Products";
-
+import "./shop.scss";
 const Shop = () => {
     return (
         <>
-            <ProductsContainer />
+            <div className="shop-container">
+                <ProductsContainer />
+            </div>
         </>
     );
 };
