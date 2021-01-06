@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navabr";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./navbar.css";
+import { setScWidth } from "../redux/actions/Actions";
 const NavbarContainer = () => {
     const [auth, setAuth] = useState(true);
     const [anchorEl, setAnchorEl] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
-    let screenWidth;
+    const dispatch = useDispatch();
     const open = Boolean(anchorEl);
 
     const handleChange = (event) => {
@@ -21,9 +22,12 @@ const NavbarContainer = () => {
         setAnchorEl(null);
     };
 
-    // redux
+    // grab cartArray from redux store
     const cartArray = useSelector((state) => state.cartReducer);
+
     const handleIsMobile = () => {
+        // set width of device screen globaly
+        dispatch(setScWidth({ width: window.innerWidth }));
         if (window.innerWidth <= 600) {
             setIsMobile(true);
         } else {

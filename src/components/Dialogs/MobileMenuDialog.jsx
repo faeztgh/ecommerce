@@ -9,6 +9,91 @@ import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { Link } from "react-router-dom";
+import PersonIcon from "@material-ui/icons/Person";
+
+function MobileMenuDialog(props) {
+    const { openMobileMenu, handleCloseMobileMenu } = props;
+    const classes = useStyles();
+
+    return (
+        <div>
+            <Dialog
+                fullScreen
+                open={openMobileMenu}
+                onClose={handleCloseMobileMenu}
+                TransitionComponent={Transition}
+            >
+                <AppBar className={classes.appBar}>
+                    <Toolbar>
+                        <Typography variant="h6" className={classes.title}>
+                            <Link to="/">
+                                <img
+                                    src={process.env.PUBLIC_URL + "/logo.png"}
+                                    alt=""
+                                    className="logo"
+                                />
+                            </Link>
+                        </Typography>
+                        <IconButton
+                            edge="start"
+                            color="inherit"
+                            onClick={handleCloseMobileMenu}
+                            aria-label="close"
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    </Toolbar>
+                </AppBar>
+                <ul className={classes.navLinks}>
+                    <li
+                        className={classes.navLinksLi}
+                        onClick={handleCloseMobileMenu}
+                    >
+                        <Link className={classes.navLink} to="/login">
+                            <IconButton
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                color="inherit"
+                            >
+                                <PersonIcon fontSize="large" />
+                            </IconButton>
+                            Profile
+                        </Link>
+                    </li>
+                    <li
+                        className={classes.navLinksLi}
+                        onClick={handleCloseMobileMenu}
+                    >
+                        <Link className={classes.navLink} to="/">
+                            Home
+                        </Link>
+                    </li>
+                    <li
+                        className={classes.navLinksLi}
+                        onClick={handleCloseMobileMenu}
+                    >
+                        <Link className={classes.navLink} to="/shop">
+                            Shop
+                        </Link>
+                    </li>
+                    <li
+                        className={classes.navLinksLi}
+                        onClick={handleCloseMobileMenu}
+                    >
+                        <Link className={classes.navLink} to="/about">
+                            About
+                        </Link>
+                    </li>
+                </ul>
+            </Dialog>
+        </div>
+    );
+}
+
+export default MobileMenuDialog;
+
+// ----------------- Styles ------------
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -57,87 +142,5 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Transition = forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
+    return <Slide direction="left" ref={ref} {...props} />;
 });
-
-function MobileMenuDialog(props) {
-    const { openMobileMenu, handleCloseMobileMenu } = props;
-    const classes = useStyles();
-
-    return (
-        <div>
-            <Dialog
-                fullScreen
-                open={openMobileMenu}
-                onClose={handleCloseMobileMenu}
-                TransitionComponent={Transition}
-            >
-                <AppBar className={classes.appBar}>
-                    <Toolbar>
-                        <Typography variant="h6" className={classes.title}>
-                            <Link to="/">
-                                <img
-                                    src={process.env.PUBLIC_URL + "/logo.png"}
-                                    alt=""
-                                    className="logo"
-                                />
-                            </Link>
-                        </Typography>
-                        <IconButton
-                            edge="start"
-                            color="inherit"
-                            onClick={handleCloseMobileMenu}
-                            aria-label="close"
-                        >
-                            <CloseIcon />
-                        </IconButton>
-                    </Toolbar>
-                </AppBar>
-                <ul className={classes.navLinks}>
-                    <li
-                        className={classes.navLinksLi}
-                        onClick={handleCloseMobileMenu}
-                    >
-                        <Link className={classes.navLink} to="/profile">
-                            <IconButton
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                color="inherit"
-                            >
-                                <AccountCircle fontSize="large" />
-                            </IconButton>
-                            Profile
-                        </Link>
-                    </li>
-                    <li
-                        className={classes.navLinksLi}
-                        onClick={handleCloseMobileMenu}
-                    >
-                        <Link className={classes.navLink} to="/">
-                            Home
-                        </Link>
-                    </li>
-                    <li
-                        className={classes.navLinksLi}
-                        onClick={handleCloseMobileMenu}
-                    >
-                        <Link className={classes.navLink} to="/shop">
-                            Shop
-                        </Link>
-                    </li>
-                    <li
-                        className={classes.navLinksLi}
-                        onClick={handleCloseMobileMenu}
-                    >
-                        <Link className={classes.navLink} to="/about">
-                            About
-                        </Link>
-                    </li>
-                </ul>
-            </Dialog>
-        </div>
-    );
-}
-
-export default MobileMenuDialog;

@@ -5,9 +5,8 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-
+import PersonIcon from "@material-ui/icons/Person";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useStyles, StyledBadge } from "./style";
 import { MobileMenuDialog } from "../Dialogs";
 import { Link } from "react-router-dom";
@@ -155,7 +154,7 @@ export const DesktopNavbar = (props) => {
                                     onClick={handleMenu}
                                     color="inherit"
                                 >
-                                    <AccountCircle />
+                                    <PersonIcon />
                                 </IconButton>
                             </Link>
                         </div>

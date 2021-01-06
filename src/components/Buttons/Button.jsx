@@ -1,5 +1,4 @@
 import React from "react";
-import "./button.css";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 const TYPE = ["outline", "contained"];
@@ -15,6 +14,7 @@ const useStyles = makeStyles(() => ({
         borderRadius: 0,
         boxShadow: "0 5px 15px black",
         transition: "0.5s",
+        minWidth: "160px",
 
         "&:hover": {
             background: "#1f1f1f",
@@ -22,12 +22,21 @@ const useStyles = makeStyles(() => ({
             color: "white",
             transition: "0.5s",
         },
-
-       
     },
 }));
 const MyButton = (props) => {
-    const { variant, href, children, endIcon, startIcon, size } = props;
+    const {
+        width,
+        noBoxShadow,
+        variant,
+        href,
+        children,
+        endIcon,
+        startIcon,
+        size,
+        mt,
+        mb,
+    } = props;
 
     const classes = useStyles();
 
@@ -40,11 +49,15 @@ const MyButton = (props) => {
                 variant={variant}
                 className={classes.button}
                 style={{
+                    width: width,
                     background: props.background,
                     color: props.color,
                     fontSize: `${props.mySize}em`,
                     paddingLeft: `${props.paddingSide}px`,
                     paddingRight: `${props.paddingSide}px`,
+                    boxShadow: `${noBoxShadow && "none"}`,
+                    marginTop: `${mt}px`,
+                    marginBottom: `${mb}px`,
                 }}
                 size={size}
             >

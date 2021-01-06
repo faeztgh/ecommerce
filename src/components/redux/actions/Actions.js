@@ -1,23 +1,14 @@
-export const increment = () => {
-    return {
-        type: "INCREMENT",
-    };
-};
-
-export const decrement = () => {
-    return {
-        type: "DECREMENT",
-    };
-};
-export const resetCounter = () => {
-    return {
-        type: "RESET",
-    };
-};
+import {
+    ADD_TO_CART,
+    REMOVE_FROM_CART,
+    SET_SC_WIDTH,
+    SET_SC_HEIGHT,
+    SIGN_IN,
+} from "../types";
 
 export const isLoggedAction = (userObj) => {
     return {
-        type: "SIGN_IN",
+        type: SIGN_IN,
         payload: userObj,
     };
 };
@@ -25,13 +16,13 @@ export const isLoggedAction = (userObj) => {
 // ADD or Remove Object from cart
 export const addToCartAction = (payload) => {
     return {
-        type: "ADD_TO_CART",
+        type: ADD_TO_CART,
         payload: payload,
     };
 };
 export const removeFromCartAction = (payload) => {
     return {
-        type: "REMOVE_FROM_CART",
+        type: REMOVE_FROM_CART,
         payload: payload,
     };
 };
@@ -40,5 +31,18 @@ export const removeFromCartAction = (payload) => {
 export const isMobileAction = () => {
     return {
         type: "IS_MOBILE",
+    };
+};
+
+export const setScWidth = (sizeObj) => {
+    return {
+        type: SET_SC_WIDTH,
+        payload: sizeObj,
+    };
+};
+export const setScHeight = (sizeObj) => {
+    return {
+        type: SET_SC_HEIGHT,
+        payload: sizeObj,
     };
 };

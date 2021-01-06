@@ -1,51 +1,17 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { FormControl, Input, InputLabel, Box, Paper } from "@material-ui/core";
 import { DoubleBtn } from "../../../Buttons";
 import { Link, useHistory } from "react-router-dom";
+import { useStyles } from "../style.js";
+import { useSelector } from "react-redux";
+import MyButton from "../../../Buttons/Button";
 
-const useStyles = makeStyles((theme) => ({
-    container: {
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        paddingTop: "150px",
-    },
-
-    form: {
-        width: "100%",
-        height: "100%",
-        maxWidth: "500px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-
-    paper: {
-        padding: " 70px 20px",
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        margin: theme.spacing(2),
-    },
-
-    box: {
-        width: "80%",
-        marginBottom: theme.spacing(3),
-    },
-
-    forgotPasswordWrapper: {
-        color: "#0089FF",
-        padding: "5px 0",
-    },
-}));
 const Login = () => {
     const classes = useStyles();
     const history = useHistory();
+
+    const scSize = useSelector((state) => state?.ScSizeReducer);
+
     return (
         <>
             <div className={classes.container}>
@@ -91,6 +57,16 @@ const Login = () => {
                             offText="Signup"
                             offAction={() => history.push("/signup")}
                         />
+                        {scSize.width < 960 && (
+                            <MyButton
+                                width="80%"
+                                noBoxShadow
+                                variant="outlined"
+                                mt={5}
+                            >
+                                <Link to="/signup">Sign up</Link>
+                            </MyButton>
+                        )}
                     </Paper>
                 </form>
             </div>
