@@ -38,4 +38,23 @@ export const useStyles = makeStyles((theme) => ({
         color: "#0089FF",
         padding: "5px 0",
     },
+
+    errorWrapper: {
+        width: "80%",
+        padding: "20px 10px",
+        background: "#FF416C",
+        margin: "15px 0",
+        borderRadius: "5px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontWeight: "bold",
+        fontSize: "1.2rem",
+        color: "white",
+        
+        "& > *": {
+            filter: "drop-shadow(0px 3px 2px  black)",
+
+        },
+    },
 }));

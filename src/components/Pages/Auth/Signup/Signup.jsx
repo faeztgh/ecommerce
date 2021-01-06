@@ -22,23 +22,45 @@ const Signup = () => {
 
     // loading signup operation
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+            return setError("Passwords do not match!");
+        }
 
-
+        try {
+            setError("");
+            setLoading(true);
+            await signup(emailRef.current.value, passwordRef.current.value);
+            emailRef.current.value = "";
+            passwordRef.current.value = "";
+            passwordConfirmRef.current.value = "";
+        } catch (err) {
+            setError("Faild to create account!");
+        }
+        setLoading(false);
+    };
 
     return (
         <>
             <div className={classes.container}>
-                <form className={classes.form}>
+                <form className={classes.form} onSubmit={handleSubmit}>
                     <Paper elevation={3} className={classes.paper}>
                         <Box>
                             <h1>Signup</h1>
                         </Box>
+                        {error && (
+                            <Box className={classes.errorWrapper}>
+                                <span>{error}</span>
+                            </Box>
+                        )}
                         <Box className={classes.box}>
                             <FormControl fullWidth>
                                 <InputLabel htmlFor="email">Email</InputLabel>
                                 <Input
-                                    refs={emailRef}
+                                    inputRef={emailRef}
                                     required={true}
                                     id="email"
                                     color="primary"
@@ -52,7 +74,7 @@ const Signup = () => {
                                     Password
                                 </InputLabel>
                                 <Input
-                                    ref={passwordRef}
+                                    inputRef={passwordRef}
                                     id="password"
                                     type="password"
                                     required={true}
@@ -65,7 +87,7 @@ const Signup = () => {
                                     Repeat Password
                                 </InputLabel>
                                 <Input
-                                    refs={passwordConfirmRef}
+                                    inputRef={passwordConfirmRef}
                                     id="repPassword"
                                     type="password"
                                     required={true}
@@ -73,11 +95,13 @@ const Signup = () => {
                             </FormControl>
                         </Box>
                         <DoubleBtn
+                            type={"submit"}
                             width="80%"
                             mainText="Choose"
                             onText="Register"
                             offText="Login"
                             offAction={() => history.push("/login")}
+                            disabled={loading}
                         />
 
                         {scSize.width < 960 && (

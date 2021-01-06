@@ -9,7 +9,8 @@
     font-weight: bold;
     font-family: $montserratFont;
 
-    span {
+    button {
+        @include flex-center-row;
         position: absolute;
         top: 0;
         left: 0;
@@ -17,13 +18,12 @@
         height: 100%;
         color: $boneColor;
         background: $mineshaftColor;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 18px;
         cursor: pointer;
+        border: none;
+        outline: none;
 
         &:nth-child(2) {
             color: #000000;
@@ -38,7 +38,7 @@
             clip-path: polygon(0% 0%, 100% 0, 100% 49%, 100% 100%, 0% 100%);
         }
 
-        &:nth-child(1):hover ~ span:nth-child(2) {
+        &:nth-child(1):hover ~ button:nth-child(2) {
             clip-path: polygon(0% 0%, 0 0, 0 50%, 0 100%, 0% 100%);
         }
     }
