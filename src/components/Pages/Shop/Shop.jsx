@@ -1,5 +1,5 @@
 import React from "react";
-import ProductsContainer from "../../Products";
+import ProductsContainer from "./components/Products";
 
 const Shop = () => {
     return (

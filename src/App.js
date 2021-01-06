@@ -12,6 +12,7 @@ import {
     Signup,
     PrivateRoute,
     ForgotPassword,
+    CartContainer,
 } from "./components";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -26,6 +27,7 @@ function App() {
                     <Route path="/about" render={() => <About />} />
                     <Route path="/login" render={() => <Login />} />
                     <Route path="/signup" render={() => <Signup />} />
+                    <Route path="/cart" render={() => <CartContainer />} />
                     <Route
                         path="/forgot-password"
                         render={() => <ForgotPassword />}

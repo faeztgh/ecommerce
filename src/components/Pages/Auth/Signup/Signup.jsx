@@ -7,7 +7,7 @@ import MyButton from "../../../Buttons/Button";
 import { useSelector } from "react-redux";
 import { useRef } from "react";
 import { useState } from "react";
-import { AuthFuncs } from "../AuthFuncs";
+import { signup } from "../AuthFuncs";
 
 const Signup = () => {
     const classes = useStyles();
@@ -22,6 +22,9 @@ const Signup = () => {
 
     // loading signup operation
     const [loading, setLoading] = useState(false);
+
+
+
 
     return (
         <>

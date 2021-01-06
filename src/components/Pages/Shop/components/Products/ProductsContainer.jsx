@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import "./product.css";
-import { addToCartAction } from "../redux/actions/Actions";
+import { addToCartAction } from "../../../../redux/actions";
 import Product from "./Product";
-import { ProductInfoDialog } from "../Dialogs";
-import { ProductPreloader } from "../Preloaders";
+import { ProductPreloader } from "../../../../Preloaders";
 
 const ProductsContainer = () => {
     const [loading, setLoading] = useState(true);

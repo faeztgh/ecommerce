@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Button from "@material-ui/core/Button";
-import { ProductInfoDialog } from "../Dialogs";
+import ProductInfoDialog from "../../../../Dialogs/ProductInfoDialog";
 const Products = (props) => {
     const {
         product,

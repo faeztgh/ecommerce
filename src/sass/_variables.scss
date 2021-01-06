@@ -1,3 +1,18 @@
 $boneColor: #f8f4ee;
 $mineshaftColor: #1f1f1f;
 $montserratFont: "Montserrat", sans-serif;
+
+
+@mixin flex-center-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin flex-center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
