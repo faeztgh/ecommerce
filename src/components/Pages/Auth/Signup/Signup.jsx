@@ -4,6 +4,7 @@ import { DoubleBtn } from "../../../Buttons";
 import { Link, useHistory } from "react-router-dom";
 import { useStyles } from "../style.js";
 import MyButton from "../../../Buttons/Button";
+import Alert from "@material-ui/lab/Alert";
 import { useSelector } from "react-redux";
 import { useRef } from "react";
 import { useState } from "react";
@@ -23,7 +24,7 @@ const Signup = () => {
     // loading signup operation
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-
+    const [success, setSuccess] = useState("");
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -34,6 +35,7 @@ const Signup = () => {
             setError("");
             setLoading(true);
             await signup(emailRef.current.value, passwordRef.current.value);
+            setSuccess("You registered successfully!");
             emailRef.current.value = "";
             passwordRef.current.value = "";
             passwordConfirmRef.current.value = "";
@@ -52,9 +54,23 @@ const Signup = () => {
                             <h1>Signup</h1>
                         </Box>
                         {error && (
-                            <Box className={classes.errorWrapper}>
-                                <span>{error}</span>
-                            </Box>
+                            <Alert
+                                className={classes.errorWrapper}
+                                variant="filled"
+                                severity="error"
+                                color="error"
+                            >
+                                {error}
+                            </Alert>
+                        )}
+                        {success && (
+                            <Alert
+                                variant="filled"
+                                severity="success"
+                                className={classes.successWrapper}
+                            >
+                                {success}
+                            </Alert>
                         )}
                         <Box className={classes.box}>
                             <FormControl fullWidth>
@@ -63,7 +79,6 @@ const Signup = () => {
                                     inputRef={emailRef}
                                     required={true}
                                     id="email"
-                                    color="primary"
                                     type="Email"
                                 />
                             </FormControl>
@@ -105,14 +120,16 @@ const Signup = () => {
                         />
 
                         {scSize.width < 960 && (
-                            <MyButton
-                                width="80%"
-                                noBoxShadow
-                                variant="outlined"
-                                mt={5}
-                            >
-                                <Link to="/login">Login</Link>
-                            </MyButton>
+                            <Link to="/login" className={classes.link}>
+                                <MyButton
+                                    width="80%"
+                                    noBoxShadow
+                                    variant="outlined"
+                                    mt={5}
+                                >
+                                    Login
+                                </MyButton>
+                            </Link>
                         )}
                     </Paper>
                 </form>

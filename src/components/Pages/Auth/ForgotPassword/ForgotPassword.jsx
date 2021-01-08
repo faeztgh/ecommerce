@@ -38,14 +38,16 @@ const Signup = () => {
                             offAction={() => history.push("/login")}
                         />
                         {scSize.width < 960 && (
-                            <MyButton
-                                width="80%"
-                                noBoxShadow
-                                variant="outlined"
-                                mt={5}
-                            >
-                                <Link to="/login">Login</Link>
-                            </MyButton>
+                            <Link to="/login" className={classes.link}>
+                                <MyButton
+                                    width="80%"
+                                    noBoxShadow
+                                    variant="outlined"
+                                    mt={5}
+                                >
+                                    Login
+                                </MyButton>
+                            </Link>
                         )}
                     </Paper>
                 </form>
