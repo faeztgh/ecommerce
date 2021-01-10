@@ -1,6 +1,6 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
-import "./footer.css";
+import "./footer.scss";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import PinterestIcon from "@material-ui/icons/Pinterest";

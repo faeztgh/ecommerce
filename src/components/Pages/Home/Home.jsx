@@ -7,7 +7,7 @@ import {
 } from "./components";
 
 import { Footer } from "../../../components";
-import "./home.css";
+import "./home.scss";
 
 const Home = () => {
     return (

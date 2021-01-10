@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import "./error.css";
+import "./error.scss";
 import ErrorImg from "./404.png";
 const Error = () => {
     return (
