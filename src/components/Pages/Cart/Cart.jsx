@@ -5,10 +5,10 @@ import { Fab, makeStyles } from "@material-ui/core";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 import { v1 } from "uuid";
 import "./cart.scss";
-
+import ProductCardContainer from "./components/product-card/ProductCardContainer";
 
 const Cart = (props) => {
-   const { cartArr, total } = props;
+    const { cartArr, total } = props;
 
     const classes = useStyles();
     return (
@@ -16,7 +16,13 @@ const Cart = (props) => {
             {cartArr ? (
                 <div className="cart-container">
                     {cartArr.map((data) => {
-                        return <ProductCard key={v1()} data={data} />;
+                        return (
+                            <ProductCardContainer
+                                key={v1()}
+                                data={data}
+                        
+                            />
+                        );
                     })}
                 </div>
             ) : (
@@ -33,7 +39,6 @@ const Cart = (props) => {
 };
 
 export default Cart;
-
 
 const useStyles = makeStyles((theme) => ({
     root: {

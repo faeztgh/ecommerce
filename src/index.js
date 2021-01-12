@@ -3,16 +3,22 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createStore } from "redux";
+import { compose, createStore } from "redux";
 import { Provider } from "react-redux";
 import allReducers from "./components/redux/reducer/";
 import { applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-const store = createStore(
-    allReducers,
-    composeWithDevTools(applyMiddleware(thunk))
-);
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+          // options like actionSanitizer, stateSanitizer
+      })
+    : compose;
+
+const enhancer = composeEnhancers(applyMiddleware(thunk));
+
+const store = createStore(allReducers, enhancer);
 
 ReactDOM.render(
     <Provider store={store}>

@@ -1,11 +1,18 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
 import { Box, Button, ButtonGroup } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useStyles } from "./style";
 
 const ProductCard = (props) => {
-    const { data } = props;
+    const {
+        data,
+        handleRemoveProduct,
+        handleDecreaseProductCount,
+        handleIncreaseProductCount,
+    } = props;
+
+    const { image, title, category, description, price, count } = data;
     const classes = useStyles();
 
     const scSize = useSelector((state) => state.ScSizeReducer);
@@ -19,29 +26,23 @@ const ProductCard = (props) => {
                 }
             >
                 <Box className={classes.imgWrapper}>
-                    <img
-                        className={classes.img}
-                        src={data.image}
-                        alt={data.title}
-                    />
+                    <img className={classes.img} src={image} alt={title} />
                 </Box>
                 <Box className={classes.descWrapper}>
                     <h3>
-                        <span className={classes.title}>{data.title}</span>
+                        <span className={classes.title}>{title}</span>
                     </h3>
                     <h4>
                         Category:
                         <span> </span>
-                        <span className={classes.category}>
-                            {data.category}
-                        </span>
+                        <span className={classes.category}>{category}</span>
                     </h4>
                     <h5>
-                        <span className={classes.desc}>{data.description}</span>
+                        <span className={classes.desc}>{description}</span>
                     </h5>
                     <h2>
                         Price:
-                        <span className={classes.price}> {data.price}$</span>
+                        <span className={classes.price}> {price}$</span>
                     </h2>
                 </Box>
 
@@ -52,20 +53,32 @@ const ProductCard = (props) => {
                             color="primary"
                             aria-label="outlined primary button group "
                         >
-                            <Button size="small">+</Button>
-                            <Button size="small">{data.id}</Button>
-                            <Button size="small">-</Button>
+                            <Button
+                                size="small"
+                                onClick={() => handleIncreaseProductCount(data)}
+                            >
+                                +
+                            </Button>
+                            <Button size="small">{count}</Button>
+                            <Button
+                                onClick={() => handleDecreaseProductCount(data)}
+                                size="small"
+                            >
+                                -
+                            </Button>
                         </ButtonGroup>
                     </Box>
                     <Box>
-                        <Button variant="contained" size="small">
+                        <Button
+                            onClick={() => handleRemoveProduct(data)}
+                            variant="contained"
+                            size="small"
+                        >
                             Remove
                         </Button>
                     </Box>
                 </Box>
             </Paper>
-
-      
         </>
     );
 };

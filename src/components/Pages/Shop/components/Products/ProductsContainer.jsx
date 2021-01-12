@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import "./product.scss";
@@ -39,8 +39,7 @@ const ProductsContainer = () => {
         setScrollForProductInfoDialog(scrollType);
         setDialogData(dialogData);
     };
-    
-    
+
     // handle close more info of each product
     const handleCloseProductInfoDialog = () => {
         setOpenProductInfoDialog(false);
@@ -52,6 +51,15 @@ const ProductsContainer = () => {
         let filtered = data.filter((item) => item.category !== "jewelery");
         filtered = filtered.filter((o) => o.category !== "electronics");
         setFilteredData(filtered);
+    };
+
+    // dispatching selected product to store
+    const cartArr = useSelector((state) => state.cartReducer);
+    const handleDispatchProduct = (product) => {
+        // set product count
+        product.count = 1;
+
+        dispatch(addToCartAction(product));
     };
 
     useEffect(() => {
@@ -81,8 +89,6 @@ const ProductsContainer = () => {
                                 <Product
                                     key={item.id}
                                     product={item}
-                                    dispatch={dispatch}
-                                    addToCart={addToCartAction}
                                     openProductinfoDialog={
                                         openProductInfoDialog
                                     }
@@ -94,6 +100,9 @@ const ProductsContainer = () => {
                                     }
                                     handleClickOpenProdcutInfoDialog={
                                         handleClickOpenProdcutInfoDialog
+                                    }
+                                    handleDispatchProduct={
+                                        handleDispatchProduct
                                     }
                                     dialogData={dialogData}
                                 />

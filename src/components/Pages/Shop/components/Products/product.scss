@@ -1,24 +1,23 @@
-
-@import '../../../../../sass/variables';
+@import "../../../../../sass/variables";
 
 .products-container {
     margin: auto;
-          @include flex-center-row;
+    @include flex-center-row;
 
     overflow: hidden;
     width: 100%;
     .product-card {
-       @include flex-center-column;
+        @include flex-center-column;
 
         .product-img {
-            width: 250px;
-            height: 350px;
+            width: 15.625rem;
+            height: 21.875rem;
             transition: 1s ease;
         }
 
         &:hover .product-img {
-            width: 270px;
-            transform: translateY(-10px);
+            width: 16.875rem;
+            transform: translateY(-0.625rem);
         }
 
         &:hover .product-title {
@@ -27,12 +26,12 @@
         }
 
         .product-title {
-            width: 250px;
+            width: 15.625rem;
             text-align: center;
-            padding: 15px 15px;
+            padding: 0.938rem 0.938rem;
             border-radius: 5px;
             background: rgb(247, 247, 247);
-            margin-bottom: 15px;
+            margin-bottom: 0.938rem;
             font-size: 1em;
             transition: 0.5s;
         }
@@ -41,7 +40,7 @@
             .product-category {
                 text-transform: capitalize;
                 color: rgb(1, 52, 100);
-                padding: 10px 0;
+                padding: 0.625rem 0;
 
                 span {
                     color: rgb(100, 100, 100);
@@ -58,7 +57,7 @@
             }
 
             .mrl {
-                margin: 0 10px !important;
+                margin: 0 0.625rem !important;
             }
         }
     }

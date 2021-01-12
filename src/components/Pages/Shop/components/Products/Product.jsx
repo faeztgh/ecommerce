@@ -6,13 +6,13 @@ import ProductInfoDialog from "../../../../Dialogs/ProductInfoDialog";
 const Products = (props) => {
     const {
         product,
-        dispatch,
-        addToCart,
+       
         openProductinfoDialog,
         handleCloseProductInfoDialog,
         scrollProductInfoDialog,
         handleClickOpenProdcutInfoDialog,
         dialogData,
+        handleDispatchProduct,
     } = props;
     const { id, title, category, image, price } = product;
     return (
@@ -33,7 +33,7 @@ const Products = (props) => {
 
                         <Button
                             className="add-to-cart-btn"
-                            onClick={() => dispatch(addToCart(product))}
+                            onClick={()=>handleDispatchProduct(product)}
                             variant="contained"
                             color="secondary"
                             endIcon={<ShoppingCartIcon />}

@@ -5,10 +5,12 @@ const CartContainer = () => {
     // grab arrays of chosen product from redux store
     const cartArr = useSelector((state) => state.cartReducer);
 
+
+
     // set the total price
     let total = 0;
     if (cartArr !== []) {
-        const totalPriceArr = cartArr.map((item) => item.price);
+        const totalPriceArr = cartArr.map((item) => item.price * item.count);
         if (totalPriceArr.length > 1) {
             total = Math.floor(totalPriceArr.reduce((a, b) => a + b));
         } else {

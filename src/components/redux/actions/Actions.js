@@ -13,13 +13,15 @@ export const isLoggedAction = (userObj) => {
     };
 };
 
-// ADD or Remove Object from cart
+// ADD Object to cart
 export const addToCartAction = (payload) => {
     return {
         type: ADD_TO_CART,
         payload: payload,
     };
 };
+// Remove Object from cart
+
 export const removeFromCartAction = (payload) => {
     return {
         type: REMOVE_FROM_CART,

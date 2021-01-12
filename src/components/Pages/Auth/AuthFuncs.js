@@ -1,7 +1,7 @@
-import { auth } from "../../../Firebase/firebaseConfig";
+// import { auth } from "../../../Firebase/firebaseConfig";
 
 
 
-export function signup(email, password) {
-    return auth.createUserWithEmailAndPassword(email, password);
-}
+// export function signup(email, password) {
+//     return auth.createUserWithEmailAndPassword(email, password);
+// }

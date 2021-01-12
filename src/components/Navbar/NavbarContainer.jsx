@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navabr";
 import { useDispatch, useSelector } from "react-redux";
-import "./navbar.css";
+import "./navbar.scss";
 import { setScWidth } from "../redux/actions/Actions";
 const NavbarContainer = () => {
     const [auth, setAuth] = useState(true);
