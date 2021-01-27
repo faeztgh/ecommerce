@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import ProductCard from "./components/product-card/ProductCard";
-import { Fab, makeStyles } from "@material-ui/core";
+import { Fab, makeStyles, Paper } from "@material-ui/core";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 import { v1 } from "uuid";
 import "./cart.scss";
@@ -14,20 +14,20 @@ const Cart = (props) => {
     return (
         <>
             {cartArr ? (
-                <div className="cart-container">
-                    {cartArr.map((data) => {
-                        return (
-                            <ProductCardContainer
-                                key={v1()}
-                                data={data}
-                        
-                            />
-                        );
-                    })}
+                <div className="cart-container-row">
+                    <div className="cart-container">
+                        {cartArr.map((data) => {
+                            return (
+                                <ProductCardContainer key={v1()} data={data} />
+                            );
+                        })}
+                    </div>
+                   
                 </div>
             ) : (
                 <h1>Your cart is Empty</h1>
             )}
+
             <div className={classes.root}>
                 <Fab variant="extended">
                     <AssignmentTurnedInIcon className={classes.extendedIcon} />
@@ -53,5 +53,13 @@ const useStyles = makeStyles((theme) => ({
     },
     extendedIcon: {
         marginRight: theme.spacing(1),
+    },
+
+    sidebar: {
+        width: "150px",
+        height: "50vh",
+        position: "fixed",
+        right:"20px",
+      
     },
 }));

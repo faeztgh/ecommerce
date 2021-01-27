@@ -45,8 +45,8 @@ const ProductCard = (props) => {
                         <span className={classes.price}> {price}$</span>
                     </h2>
                 </Box>
-
                 <hr className={classes.line} />
+
                 <Box className={classes.btnWrapper}>
                     <Box>
                         <ButtonGroup
@@ -79,6 +79,7 @@ const ProductCard = (props) => {
                     </Box>
                 </Box>
             </Paper>
+            
         </>
     );
 };

@@ -2,6 +2,15 @@
 
 .cart-container {
     @include flex-center-column;
-    width: 100%;
+    align-items: unset;
+    width: 90%;
     margin-top: 100px;
+    margin-left: auto;
+}
+.cart-container-row {
+    @include flex-center-row;
+    // align-items: unset;
+    width: 90%;
+    margin-top: 100px;
+    position: relative;
 }

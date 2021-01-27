@@ -1,15 +1,17 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-
 export const useStyles = makeStyles((theme) => ({
     paperRow: {
         display: "flex",
         flexDirection: "row",
         background: "white",
-        width: "90%",
+        width: "70%",
         padding: "20px",
         marginBottom: theme.spacing(2),
-        
+
+        [theme.breakpoints.down("md")]: {
+            width: "100%",
+        },
     },
     paperCol: {
         display: "flex",
@@ -17,7 +19,7 @@ export const useStyles = makeStyles((theme) => ({
         justifyContent: "space-around",
         alignItems: "center",
         background: "white",
-        width: "80%",
+        width: "100%",
         padding: "20px",
         marginBottom: theme.spacing(2),
     },
