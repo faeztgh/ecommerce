@@ -12,7 +12,7 @@
         "@testing-library/user-event": "^12.2.0",
         "axios": "^1.6.0",
         "dotenv": "^8.2.0",
-        "node-sass": "^7.0.0",
+        "node-sass": "^9.0.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-horizontal-scrolling-menu": "^0.7.8",
